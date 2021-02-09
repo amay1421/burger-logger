@@ -14,6 +14,23 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" })); 
 app.set("view engine", "handlebars");
 
+app.get("/", function(req, res) {
+    connection.query("SELECT * FROM burgers;", function(err, data) {
+      if (err) throw err;
+  
+      res.render("index", { burgers: burger_name });
+    });
+  });
+  
+//   // Post route -> back to home
+//   app.post("/", function(req, res) {
+
+//     connection.query("INSERT INTO burgers (burger) VALUES (?)", [req.body.task], function(err, result) {
+//       if (err) throw err;
+  
+//       res.redirect("/");
+//     });
+//   });
 
 
 // Start our server so that it can begin listening to client requests.
