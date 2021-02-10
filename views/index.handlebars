@@ -1,0 +1,23 @@
+<h1>Eat Da Burger!</h1>
+
+<h3>Add a burger and click the devour button to enjoy it!</h3>
+
+<ul>
+  {{#each burgers}}
+  	<li>
+  	   <p>ID: {{this.burger_name}}</p>
+       <p>Task: {{this.devour}}</p>
+	   <form action="/devour" method="POST">
+			<button type="submit">Devour</button>
+		</form>
+
+  	</li>
+  {{/each}}
+</ul>
+
+<form action="/create" method="POST">
+	<textarea type="text" name="burger_name"></textarea>
+
+	<button type="submit">Submit</button>
+</form>
+

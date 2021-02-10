@@ -5,6 +5,9 @@ var PORT = process.env.PORT || 8081;
 var app = express();
 var exphbs = require("express-handlebars");
 
+var connection = require('./config/connection')
+var htmlRoutes = require('./controllers/html-routes')
+
 
 // Parse request body as JSON
 app.use(express.static("public"));
@@ -14,13 +17,16 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" })); 
 app.set("view engine", "handlebars");
 
-app.get("/", function(req, res) {
-    connection.query("SELECT * FROM burgers;", function(err, data) {
-      if (err) throw err;
+app.use(htmlRoutes)
+
+// app.get("/", function(req, res) {
+//     connection.query("SELECT * FROM burgers;", function(err, data) {
+//       if (err) throw err;
+
   
-      res.render("index", { burgers: burger_name });
-    });
-  });
+//       res.render("index", { burgers: data });
+//     });
+//   });
   
 //   // Post route -> back to home
 //   app.post("/", function(req, res) {
