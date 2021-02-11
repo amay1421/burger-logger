@@ -1,12 +1,14 @@
 <h1>Eat Da Burger!</h1>
 
-<h3>Add a burger and click the devour button to enjoy it!</h3>
+<img class="image" src="assets/images/burgerburger.png" alt="A tasty cheeseburger" width= "200" height="200">
+
+<h3>Add a burger you want to eat and then click submit!</h3>
 
 <ul>
   {{#each burgers}}
   	<li>
-  	   <p>ID: {{this.burger_name}}</p>
-       <p>Task: {{this.devour}}</p>
+  	   <p>{{this.burger_name}}</p>
+       <p>{{this.devour}}</p>
 	   <form action="/devour" method="POST">
 			<button class="btns" type="submit">Devour</button>
 		</form>
