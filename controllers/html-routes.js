@@ -22,12 +22,7 @@ router.get("/", function(req, res) {
         res.render("index", { burgers: data });
     })
 
-    // connection.query("SELECT * FROM burgers;", function(err, data) {
-    //   if (err) throw err;
 
-  
-    //   res.render("index", { burgers: data });
-    // });
 });
 
 module.exports = router;
