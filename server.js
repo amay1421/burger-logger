@@ -19,25 +19,6 @@ app.set("view engine", "handlebars");
 
 app.use(htmlRoutes)
 
-// app.get("/", function(req, res) {
-//     connection.query("SELECT * FROM burgers;", function(err, data) {
-//       if (err) throw err;
-
-  
-//       res.render("index", { burgers: data });
-//     });
-//   });
-  
-//   // Post route -> back to home
-//   app.post("/", function(req, res) {
-
-//     connection.query("INSERT INTO burgers (burger) VALUES (?)", [req.body.task], function(err, result) {
-//       if (err) throw err;
-  
-//       res.redirect("/");
-//     });
-//   });
-
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
