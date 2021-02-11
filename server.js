@@ -1,11 +1,11 @@
 // Dependencies
 var express = require("express");
-var path = require('path');
+// var path = require('path');
 var PORT = process.env.PORT||8081;
 var app = express();
 var exphbs = require("express-handlebars");
 
-var connection = require('./config/connection')
+// var connection = require('./config/connection')
 var htmlRoutes = require('./controllers/html-routes')
 
 
