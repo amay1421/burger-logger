@@ -6,4 +6,4 @@ This application includes a form where users can enter a burger that they would 
 
 <strong>Repo Link:</strong> https://github.com/amay1421/burger-logger
 <br> <br>
-<strong>Heroku Link:</strong>
+<strong>Heroku Link:</strong> https://git.heroku.com/warm-brook-84152.git
