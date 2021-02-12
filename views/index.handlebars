@@ -4,18 +4,31 @@
 
 <h3>Add a burger you want to eat and then click submit!</h3>
 
+<div class="burgers">
 <ul>
   {{#each burgers}}
-  	<li>
-  	   <p>{{this.burger_name}}</p>
-       <p>{{this.devour}}</p>
-	   <form action="/devoured/:id" method="POST">
-			<button class="btns" type="submit">Devour</button>
-		</form>
+	{{#unless this.devoured}}
+		<li>
+		<p>{{this.burger_name}}</p>
+		<form action="/devoured/{{this.id}}" method="GET">
+				<button class="btns" type="submit">Devour</button>
+			</form>
 
-  	</li>
+		</li>
+	{{/unless}}
   {{/each}}
 </ul>
+
+<ul>
+  {{#each burgers}}
+	{{#if this.devoured }}
+  		{{> burgers/burger-block}}
+	{{/if}}
+  {{/each}}
+</ul>
+
+</div>
+
 
 <form  action="/create" method="POST">
 	<textarea class="submitform" type="text" name="burger_name"></textarea>

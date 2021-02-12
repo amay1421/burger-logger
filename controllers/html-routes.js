@@ -23,13 +23,13 @@ router.get("/", function(req, res) {
 });
 
 
-router.put("/devoured/:id", function(req, res) {  
+router.get("/devoured/:id", function(req, res) {  
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
   
     Burger.update(
-        {devoured: req.body.devoured}, condition, function(data) {
-            res.redirect('/devoured');
+        {devoured: true}, condition, function(data) {
+            res.redirect('/');
     });
   });
 

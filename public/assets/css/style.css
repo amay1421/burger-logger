@@ -34,3 +34,7 @@ h3 {
     bottom: 200px;
     left: 500px;
 }
+
+.burgers {
+    display: flex;
+}
